@@ -18,13 +18,10 @@ def train_ad_model(context:mlrun.MLClientCtx,insightpak_name,instance_id:str):
     for col in df:
         df.loc[df.sample(frac=0.2).index, col] = np.nan
     df_json = dummy_ad.ModelHelper.convert_df_to_json(df)
-    ad_model_obj = dummy_ad.DummyAD()
-    ad_model_obj.train_model(df_json)
-#     model1 = ad_model_obj.get_model()
-    # Apply MLRun's interface for tf.keras:
-    mlrun_tf_keras.apply_mlrun(model=model1, model_name="ad_model", context=context)
+    model = dummy_ad.DummyAD()
+    model.train_model(df_json)
     model.export_model('.')
-   
+    
     # Saved as ZIP file
     model_key=f'{insightpak_name}_{instance_id}'
     model_state_key=f'{insightpak_name}_state_{instance_id}'

@@ -1,0 +1,48 @@
+kind: job
+metadata:
+  name: train-model
+  tag: ''
+  hash: 9867afd375d4026a2f56da967777a5c0c3e738b7
+  project: inference-test
+spec:
+  command: ''
+  args: []
+  image: mlrun/ml-models
+  build:
+    functionSourceCode: aW1wb3J0IG1scnVuCmltcG9ydCBqc29uCmltcG9ydCBqb2JsaWIKaW1wb3J0IHNodXRpbAppbXBvcnQgbnVtcHkgYXMgbnAKaW1wb3J0IHBhbmRhcyBhcyBwZApmcm9tIHBhdGhsaWIgaW1wb3J0IFBhdGgKIyBpbXBvcnQgZHVtbXlfYWQKCiMgZHVtbXlfYWQ9bWxydW4uZnVuY3Rpb25fdG9fbW9kdWxlKCcuL2R1bW15X2FkLnB5JykKZHVtbXlfYWQ9bWxydW4uZnVuY3Rpb25fdG9fbW9kdWxlKCcvVXNlci92aXZlay9TaW5nbGVQcm9qZWN0TXVsdGlwbGVHcmFwaEltcG9ydC9hZG1vZGVsX21hbnVhbF9sb2dnaW5nL2R1bW15X2FkLnB5JykKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIApkZWYgdHJhaW5fYWRfbW9kZWwoY29udGV4dDptbHJ1bi5NTENsaWVudEN0eCxpbnNpZ2h0cGFrX25hbWUsaW5zdGFuY2VfaWQ6c3RyKToKICAgIG1vZGVsX2Rpcj1QYXRoKCcuL21vZGVsJykKICAgIGRmID0gcGQuRGF0YUZyYW1lKG5wLnJhbmRvbS5yYW5kaW50KDAsMTAwLHNpemU9KDE1MCwgMykpLAogICAgICAgICAgICAgICAgICAgICAgY29sdW1ucz1saXN0KCdBQkMnKSwKICAgICAgICAgICAgICAgICAgICAgIGluZGV4ID0gcGQuZGF0ZV9yYW5nZSgnMjAyMC0wMS0wMScsIHBlcmlvZHM9MTUwLCBmcmVxPSc1VCcpKQogICAgZm9yIGNvbCBpbiBkZjoKICAgICAgICBkZi5sb2NbZGYuc2FtcGxlKGZyYWM9MC4yKS5pbmRleCwgY29sXSA9IG5wLm5hbgogICAgZGZfanNvbiA9IGR1bW15X2FkLk1vZGVsSGVscGVyLmNvbnZlcnRfZGZfdG9fanNvbihkZikKICAgIG1vZGVsID0gZHVtbXlfYWQuRHVtbXlBRCgpCiAgICBtb2RlbC50cmFpbl9tb2RlbChkZl9qc29uKQogICAgbW9kZWwuZXhwb3J0X21vZGVsKCcuJykKICAgIAogICAgIyBTYXZlZCBhcyBaSVAgZmlsZQogICAgbW9kZWxfa2V5PWYne2luc2lnaHRwYWtfbmFtZX1fe2luc3RhbmNlX2lkfScKICAgIG1vZGVsX3N0YXRlX2tleT1mJ3tpbnNpZ2h0cGFrX25hbWV9X3N0YXRlX3tpbnN0YW5jZV9pZH0nCiAgICBzaHV0aWwubWFrZV9hcmNoaXZlKCcuL21vZGVsL2FkX21vZGVsX3ppcCcsICd6aXAnLCAnLi9tb2RlbC9hZF9tb2RlbCcpCiAgICBjb250ZXh0LmxvZ19tb2RlbChrZXk9bW9kZWxfa2V5LG1vZGVsX2ZpbGU9Jy4vbW9kZWwvYWRfbW9kZWxfemlwLnppcCcpCiAgICAKICAgICMgbG9nIGpvYmxpYiBtb2RlbAogICAgY29udGV4dC5sb2dfbW9kZWwoa2V5PW1vZGVsX3N0YXRlX2tleSxtb2RlbF9kaXI9Jy4vbW9kZWwnLG1vZGVsX2ZpbGU9J2FkX3N0YXRlLmpvYmxpYicpCiAgICAKICAgICMgZGVsZXRlIG1vZGVsIGZvbGRlcgogICAgaWYgbW9kZWxfZGlyLmV4aXN0cygpIGFuZCBtb2RlbF9kaXIuaXNfZGlyKCk6CiAgICAgICAgc2h1dGlsLnJtdHJlZShtb2RlbF9kaXIp
+    commands: []
+    code_origin: https://github.com/vivekcherarajan1992/SingleProjectMultipleGraphImport.git#de7b1e64ebf310fed1d5c5130c406069a911e550:training.py
+    origin_filename: training.py
+  entry_points:
+    train_ad_model:
+      name: train_ad_model
+      doc: ''
+      parameters:
+      - name: context
+        type: MLClientCtx
+        default: ''
+      - name: insightpak_name
+        default: ''
+      - name: instance_id
+        type: str
+        default: ''
+      outputs:
+      - default: ''
+      lineno: 13
+  description: ''
+  default_handler: ''
+  disable_auto_mount: false
+  env:
+  - name: V3IO_API
+    value: ''
+  - name: V3IO_USERNAME
+    value: ''
+  - name: V3IO_ACCESS_KEY
+    value: ''
+  - name: V3IO_FRAMESD
+    value: ''
+  priority_class_name: igz-workload-medium
+  preemption_mode: prevent
+  affinity: null
+  tolerations: null
+verbose: false

@@ -1,0 +1,11 @@
+kind: project
+metadata:
+  name: inference-test
+spec:
+  functions:
+  - url: train_ad_model.yaml
+    name: train_ad_model
+  workflows: []
+  artifacts: []
+  source: ''
+  desired_state: online
