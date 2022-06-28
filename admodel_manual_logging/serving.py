@@ -53,7 +53,7 @@ class ModelOnDemandServer(V2ModelServer):
         model_file = ZipFile(model_file, 'r')
         model_file.extractall(tmp.name)        
         model=keras.models.load_model(tmp.name)
-        
+                
         print(type(model))
 
         # Inferring thourgh the model:

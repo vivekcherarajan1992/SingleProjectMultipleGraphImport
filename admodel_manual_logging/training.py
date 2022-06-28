@@ -22,7 +22,6 @@ def train_ad_model(context:mlrun.MLClientCtx,insightpak_name,instance_id:str):
     ad_model_obj.train_model(df_json)
 #     model1 = ad_model_obj.get_model()
     # Apply MLRun's interface for tf.keras:
-    mlrun_tf_keras.apply_mlrun(model=model1, model_name="ad_model", context=context)
     model.export_model('.')
    
     # Saved as ZIP file
