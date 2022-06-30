@@ -1,0 +1,42 @@
+kind: serving
+metadata:
+  name: ad_model_serving
+  hash: 57a455f4bdfbdbdd1aadbd849aaab57f6d82e0d9
+  project: git-proj-vivek
+  categories: []
+spec:
+  command: ''
+  args: []
+  image: mlrun/mlrun
+  build:
+    commands: []
+  description: ''
+  disable_auto_mount: false
+  env: []
+  priority_class_name: igz-workload-medium
+  preemption_mode: prevent
+  min_replicas: 1
+  max_replicas: 4
+  source: ''
+  function_kind: serving_v2
+  graph:
+    steps:
+      preprocess:
+        kind: task
+        handler: serving.preprocess
+      model_on_demand_server:
+        kind: task
+        class_name: ModelOnDemandServer
+        after:
+        - preprocess
+      postprocess:
+        kind: task
+        handler: serving.postprocess
+        after:
+        - model_on_demand_server
+        responder: true
+    engine: async
+  secret_sources: []
+  affinity: null
+  tolerations: null
+verbose: false

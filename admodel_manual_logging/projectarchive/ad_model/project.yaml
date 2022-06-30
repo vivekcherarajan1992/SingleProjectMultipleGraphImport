@@ -4,13 +4,13 @@ metadata:
 spec:
   description: my new project
   functions:
-  - name: ad_model_training
+  - name: myjob
     kind: job
     image: mlrun/mlrun
     handler: training.train_ad_model
     with_repo: true
   - url: serving.yaml
-    name: ad_model_serving
+    name: serving
     with_repo: true
   workflows: []
   artifacts: []

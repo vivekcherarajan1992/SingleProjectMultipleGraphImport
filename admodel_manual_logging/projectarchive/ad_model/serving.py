@@ -6,10 +6,10 @@ import json
 from zipfile import ZipFile
 import tempfile
 from mlrun.artifacts import get_model
-import dummy_ad
+# import dummy_ad
 from tensorflow import keras
 
-# dummy_ad=mlrun.function_to_module('/User/vivek/SingleProjectMultipleGraphImport/admodel_manual_logging/dummy_ad.py')
+dummy_ad=mlrun.function_to_module('/User/vivek/SingleProjectMultipleGraphImport/admodel_manual_logging/dummy_ad.py')
 
 def preprocess(event: dict):    
     return event

@@ -28,7 +28,7 @@ def train_ad_model(context:mlrun.MLClientCtx,insightpak_name,instance_id:str):
     model_key=f'{insightpak_name}_{instance_id}'
     model_state_key=f'{insightpak_name}_state_{instance_id}'
     shutil.make_archive('./model/ad_model_zip', 'zip', './model/ad_model')
-    context.log_model(key=model_key,db_key="model_key",model_file='./model/ad_model_zip.zip')
+    context.log_model(key=model_key,model_file='./model/ad_model_zip.zip')
     
     # log joblib model
     context.log_model(key=model_state_key,model_dir='./model',model_file='ad_state.joblib')
